@@ -1,0 +1,66 @@
+#mu-slider {
+  display: inline;
+  float: left;
+  width: 100%;
+  position: relative;
+  box-sizing: border-box;
+  font-family: "Prata", serif;
+  color: #333333;
+  font-size: 15px;
+  overflow-x: hidden;
+  line-height: 1.42;
+}
+
+.slider-card img {
+  border: none;
+  vertical-align: middle;
+}
+.slider-card .mu-top-slider-content {
+  position: absolute;
+  left: 15%;
+  top: 33%;
+  right: 15%;
+  text-align: center;
+  z-index: 99;
+  display: block;
+}
+.slider-card:after {
+  background-color: rgba(0, 0, 0, 0.6);
+  bottom: 0;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 9;
+}
+
+.slider-card .mu-top-slider-content .title {
+  color: #fff;
+  font-size: 70px;
+  line-height: 90px;
+  font-weight: 700;
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+}
+
+.slider-card .mu-top-slider-content p {
+  color: #fff;
+  font-size: 20px;
+  margin-bottom: 30px;
+  margin-top: 10px;
+  padding: 0 30px;
+  display: block;
+}
+
+.slider-card .mu-top-slider-content a {
+  background-color: #fff;
+  font-family: "Open Sans", sans-serif;
+  display: inline-block;
+  font-size: 16px;
+  padding: 15px 35px;
+  position: relative;
+  transition: all 0.5s;
+  text-decoration: none;
+  color: #333333;
+}
