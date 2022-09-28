@@ -11,24 +11,42 @@ function getDescription(description) {
   return description ? description : "...";
 }
 
-function setLi(li, element) {
+function showIngredients(ingredients) {
+  return ingredients
+    .map((ingredient) => {
+      return `* ${ingredient.name}, ${ingredient.quantity} <br>`;
+    })
+    .join("");
+}
+
+function setLi(li, element, source) {
   li.innerHTML = ` <div class="media">
       <div class="media-left">
-        <a href="#">
-          <img
-              style="width:100px; height:100px;"
-            src="${element.thumbnail_url}"
-            alt="img"
-          />
-        </a>
+      <a href="#">
+      <img
+          style="width:100px; height:100px;"
+         src="${"api" == source ? element.thumbnail_url : "/assets/img/menu/item-1.jpg"}"
+        alt="${element.name}"
+      />
+    </a>
       </div>
       <div class="media-body">
         <h4 class="media-heading">
           <a href="#">${element.name}</a>
         </h4>
-        <span class="steps">${getSteps(element.instructions)}</span>
+        <span class="steps">
+          ${
+            "api" == source
+              ? getSteps(element.instructions)
+              : `${element.steps.length} steps`
+          }
+        </span>
         <p>
-          ${getDescription(element.description)}
+          ${
+            "api" == source
+              ? getDescription(element.description)
+              : showIngredients(element.ingredients)
+          }
         </p>
       </div>
     </div>`;
@@ -51,7 +69,9 @@ function createMenu(list) {
         ${createUl(list.slice(half))}
       </ul>
    </div>
-  </div>`;
+  </div>
+  `;
+  console.log(div);
   return div;
 }
 
@@ -75,51 +95,46 @@ function toggleActive(tag) {
   lastSelected = tag;
 }
 
+async function addToList(tag) {
+  const response = await getFromApi(tag);
+  const menus = createMenu(response).innerHTML;
+  catalogue[tag] = menus;
+  return menus;
+}
+
 async function getMenusByTag(tag) {
   if (lastSelected == tag) return;
-  menuContent.innerHTML =
-    catalogue[tag] == undefined
-      ? await getFromApi(tag).then((results) => {
-          let div = createMenu(results);
-          catalogue[tag] = div.innerHTML;
-          return catalogue[tag]
-        })
-      : catalogue[tag];
-
+  const menus = catalogue[tag] ? catalogue[tag] : await addToList(tag);
+  menuContent.innerHTML = menus;
   toggleActive(tag);
 }
-//   if (catalogue[tag] == undefined) {
-//     getFromApi(tag)
-//       .then((results) => {
-//         let div = createMenu(results);
-//         catalogue[tag] = div.innerHTML;
-//       })
-//       .then(() => {
-//         menuContent.innerHTML = catalogue[tag];
-//         toggleActive(tag);
-//       });
-//   } else {
-//     menuContent.innerHTML = catalogue[tag];
-//     toggleActive(tag);
-//   }
-// }
 
-function getFromApi(tag) {
-  return fetch(URL + tag, options)
-    .then((response) => response.json())
-    .then((response) => {
-      return response.results;
-    })
-    .catch((err) => console.error(err));
+//If the api is not available I will use the recipes I get from recipes.json
+async function getFromApi(tag) {
+  const options = {
+    method: "GET",
+    headers: {
+      "X-RapidAPI-Key": "6c0a84ef39mshe36664d69ea4af4p11b4e2jsnbf73e800b288",
+      "X-RapidAPI-Host": "tasty.p.rapidapi.com",
+    },
+  };
+  const request = new Request(`${URL}${tag}`, options);
+  const response = await fetch(request);
+  return response.ok ? await response.json().results : await getFromLocal();
 }
 
-const options = {
-  method: "GET",
-  headers: {
-    "X-RapidAPI-Key": "6c0a84ef39mshe36664d69ea4af4p11b4e2jsnbf73e800b288",
-    "X-RapidAPI-Host": "tasty.p.rapidapi.com",
-  },
-};
+async function getFromLocal() {
+  const options = {
+    method: "GET",
+    headers: { "Content-Type": "application/json" },
+    mode: "cors",
+    cache: "default",
+  };
+  const request = new Request("./assets/js/recipes.json", options);
+  const response = await fetch(request);
+  const json = await response.json();
+  return json;
+}
 
 function showFirstMenu() {
   getMenusByTag("breakfast");

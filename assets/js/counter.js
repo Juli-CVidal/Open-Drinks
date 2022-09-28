@@ -1,6 +1,8 @@
 let section;
 let counters;
 let windowHt;
+const counterSection = section.offset();
+const viewportHeight = window.height();
 
 const updateCounter = (counter) => {
   const target = counter.getAttribute("data-target");
@@ -8,23 +10,21 @@ const updateCounter = (counter) => {
 
   if (current < target) {
     counter.innerText = current + 1;
-    setTimeout(updateCounter(counter), 100);
+    setTimeout(updateCounter(), 100);
   }
 };
 
-const checkIfInView = () => {
-  let sectionPos = section.getBoundingClientRect().top;
-  if (sectionPos <= windowHt / 1.3) {
-    alert("hiii")
-    counters.forEach((counter) => updateCounter(counter));
+function checkIfInView() {
+  if (window.scrollY() > counterSection.top - viewportHeight) {
+    updateCounter();
   }
-};
+}
 
 const init = () => {
   windowHt = window.innerHeight;
   section = document.getElementById("mu-counter");
   counters = document.querySelectorAll(".counter");
-  // document.addEventListener("DOMContentLoaded", checkIfInView());
+
   window.addEventListener("scroll", checkIfInView());
 };
 
