@@ -6,8 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>SpicyX | Home</title>
 
-
-
     <!-- Bootstrap -->
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
 
@@ -40,7 +38,6 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
     />
-
   </head>
   <body>
     <!-- Pre Loader -->
@@ -76,9 +73,7 @@
               <span class="icon-bar"></span>
             </button>
             <!-- LOGO -->
-            <a class="navbar-brand" href="index.html"
-              ><img src="assets/img/logo.png" alt="Logo img"
-            /></a>
+            <a class="navbar-brand" href="index.html">OpenDrinks</a>
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul id="top-menu" class="nav navbar-nav navbar-right mu-main-nav">
@@ -152,33 +147,34 @@
             </div>
             <div class="menu-content">
               <ul class="nav nav-tabs menu" id="categories">
-                <li id="breakfast">
-                  <a onclick="{getMenusByTag('breakfast')}">Breakfast</a>
+                <li id="Beer">
+                  <a onclick="{getMenusByTag('Beer')}">Beer</a>
                 </li>
-                <li id="lunch">
-                  <a onclick="{getMenusByTag('lunch')}">Lunch</a>
+                <li id="Cocktail">
+                  <a onclick="{getMenusByTag('Cocktail')}">Cocktail</a>
                 </li>
-                <li id="dinner">
-                  <a onclick="{getMenusByTag('dinner')}">Dinner</a>
+                <li id="Shot">
+                  <a onclick="{getMenusByTag('Shot')}">Shot</a>
                 </li>
-                <li id="snacks">
-                  <a onclick="{getMenusByTag('snacks')}">Snacks</a>
+                <li id="Coffee / Tea">
+                  <a onclick="{getMenusByTag('Coffee / Tea')}">Coffe / Tea</a>
                 </li>
-                <li id="drinks">
-                  <a onclick="{getMenusByTag('drinks')}">Drinks</a>
+                <li id="Homemade Liqueur">
+                  <a onclick="{getMenusByTag('Homemade Liqueur')}">Homenade</a>
                 </li>
-                <li id="low_sugar">
-                  <a onclick="{getMenusByTag('low_sugar')}">Low Sugar</a>
+                <li id="Punch / Party Drink">
+                  <a onclick="{getMenusByTag('Punch / Party Drink')}"
+                    >Party Drinks</a
+                  >
                 </li>
-                <li id="healthy">
-                  <a onclick="{getMenusByTag('healthy')}">Healthy</a>
+                <li id="Soft Drink">
+                  <a onclick="{getMenusByTag('Soft Drink')}">Soft Drink</a>
                 </li>
               </ul>
 
               <!-- Tab panes -->
               <div class="tab-content">
-                <div class="row" id="catalogue">
-                </div>
+                <div class="row" id="catalogue"></div>
               </div>
             </div>
           </div>
@@ -188,55 +184,43 @@
     <!-- End Restaurant Menu -->
 
     <!-- Start Counter Section -->
-    <section id="mu-counter">
-      <div class="mu-counter-overlay">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12">
-              <div class="mu-counter-area">
-                <ul class="mu-counter-nav">
-                  <li class="col-md-3 col-sm-3 col-xs-12">
-                    <div class="mu-single-counter">
-                      <span>Fresh</span>
-                      <h3>
-                        <span class="counter" data-target="55">00</span
-                        ><sup>+</sup>
-                      </h3>
-                      <p>Breakfast Items</p>
-                    </div>
-                  </li>
-                  <li class="col-md-3 col-sm-3 col-xs-12">
-                    <div class="mu-single-counter">
-                      <span>Delicious</span>
-                      <h3>
-                        <span class="counter" data-target="130">000</span
-                        ><sup>+</sup>
-                      </h3>
-                      <p>Lunch Items</p>
-                    </div>
-                  </li>
-                  <li class="col-md-3 col-sm-3 col-xs-12">
-                    <div class="mu-single-counter">
-                      <span>Hot</span>
-                      <h3>
-                        <span class="counter" data-target="35">00</span
-                        ><sup>+</sup>
-                      </h3>
-                      <p>Coffee Items</p>
-                    </div>
-                  </li>
-                  <li class="col-md-3 col-sm-3 col-xs-12">
-                    <div class="mu-single-counter">
-                      <span>Satisfied</span>
-                      <h3>
-                        <span class="counter" data-target="3562">0000</span
-                        ><sup>+</sup>
-                      </h3>
-                      <p>Customers</p>
-                    </div>
-                  </li>
-                </ul>
-              </div>
+    <section id="counter">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="counter-area">
+              <ul class="counter-nav">
+                <li class="col-md-4 col-sm-4 col-xs-12">
+                  <div class="mu-single-counter">
+                    <span>We have</span>
+                    <h3>
+                      <span class="counter" data-target="635">00</span
+                      ><sup>+</sup>
+                    </h3>
+                    <p>Drinks to try</p>
+                  </div>
+                </li>
+                <li class="col-md-4 col-sm-4 col-xs-12">
+                  <div class="mu-single-counter">
+                    <span>Delicious</span>
+                    <h3>
+                      <span class="counter" data-target="489">000</span
+                      ><sup>+</sup>
+                    </h3>
+                    <p>Fresh Ingredients</p>
+                  </div>
+                </li>
+                <li class="col-md-4 col-sm-4 col-xs-12">
+                  <div class="mu-single-counter">
+                    <span>Satisfied</span>
+                    <h3>
+                      <span class="counter" data-target="3562">0000</span
+                      ><sup>+</sup>
+                    </h3>
+                    <p>Customers</p>
+                  </div>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
@@ -403,104 +387,7 @@
     </section>
     <!-- End Chef Section -->
 
-    <!-- Start Contact section -->
-    <section id="mu-contact">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="mu-contact-area">
-              <div class="mu-title">
-                <span class="mu-subtitle">Get In Touch</span>
-                <h2>Contact Us</h2>
-                <i class="fa fa-spoon"></i>
-                <span class="mu-title-bar"></span>
-              </div>
-              <div class="mu-contact-content">
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="mu-contact-left">
-                      <form class="mu-contact-form">
-                        <div class="form-group">
-                          <label for="name">Your Name</label>
-                          <input
-                            type="text"
-                            class="form-control"
-                            id="name"
-                            placeholder="Name"
-                          />
-                        </div>
-                        <div class="form-group">
-                          <label for="email">Email address</label>
-                          <input
-                            type="email"
-                            class="form-control"
-                            id="email"
-                            placeholder="Email"
-                          />
-                        </div>
-                        <div class="form-group">
-                          <label for="subject">Subject</label>
-                          <input
-                            type="text"
-                            class="form-control"
-                            id="subject"
-                            placeholder="Subject"
-                          />
-                        </div>
-                        <div class="form-group">
-                          <label for="message">Message</label>
-                          <textarea
-                            class="form-control"
-                            id="message"
-                            cols="30"
-                            rows="10"
-                            placeholder="Type Your Message"
-                          ></textarea>
-                        </div>
-                        <button type="submit" class="mu-send-btn">
-                          Send Message
-                        </button>
-                      </form>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="mu-contact-right">
-                      <div class="mu-contact-widget">
-                        <h3>Office Address</h3>
-                        <p>
-                          Lorem ipsum dolor sit amet, consectetur adipisicing
-                          elit. Mollitia temporibus corporis ea non consequatur
-                          porro corrupti hic voluptatibus assumenda, doloribus.
-                        </p>
-                        <address>
-                          <p><i class="fa fa-phone"></i> (850) 457 6688</p>
-                          <p>
-                            <i class="fa fa-envelope-o"></i>contact@markups.io
-                          </p>
-                          <p>
-                            <i class="fa fa-map-marker"></i>368 St. Panama City,
-                            Florida, USA
-                          </p>
-                        </address>
-                      </div>
-                      <div class="mu-contact-widget">
-                        <h3>Open Hours</h3>
-                        <address>
-                          <p><span>Monday - Friday</span> 9.00 am to 12 pm</p>
-                          <p><span>Saturday</span> 9.00 am to 10 pm</p>
-                          <p><span>Sunday</span> 10.00 am to 12 pm</p>
-                        </address>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- End Contact section -->
+  
 
     <!-- Start Footer -->
     <footer id="mu-footer">
@@ -518,7 +405,12 @@
               <div class="mu-footer-copyright">
                 <p>
                   Designed by
-                  <a rel="nofollow" href="http://www.markups.io/">MarkUps.io</a>
+                  <a
+                    rel="nofollow"
+                    href="https://github.com/Juli-CVidal"
+                    target="_blank"
+                    >Julián Vidal</a
+                  >
                 </p>
               </div>
             </div>
@@ -531,8 +423,6 @@
     <!-- Custom js -->
     <script src="assets/js/bootstrap.js"></script>
     <script src="assets/js/Slider.js"></script>
-
-
 
     <script src="assets/js/Menu.js"></script>
     <script src="assets/js/Navbar.js"></script>
