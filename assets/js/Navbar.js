@@ -10,7 +10,7 @@ function toggleNavbarClasses() {
 
 
 function startNavbar() {
-  mainNavbar = document.querySelector(".mu-main-navbar");
+  mainNavbar = document.querySelector(".main-navbar");
   window.addEventListener("scroll", () => toggleNavbarClasses());
 }
 
