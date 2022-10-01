@@ -1,16 +1,18 @@
-let mainNavbar;
+let navbar;
+let menuIcon;
 
 function toggleNavbarClasses() {
   if (window.scrollY >= 200) {
-    mainNavbar.classList.add("navbar-bg");
+    navbarSection.classList.add("navbar-bg");
   } else {
-    mainNavbar.classList.remove("navbar-bg");
+    navbarSection.classList.remove("navbar-bg");
   }
 }
 
-
 function startNavbar() {
-  mainNavbar = document.querySelector(".mu-main-navbar");
-  window.addEventListener("scroll", () => toggleNavbarClasses());
+  menuIcon = document.querySelector(".menu-icon");
+  navbar = document.getElementById("navbar");
+  menuIcon.addEventListener("click", () => {
+    navbar.classList.toggle("showing");
+  });
 }
-
