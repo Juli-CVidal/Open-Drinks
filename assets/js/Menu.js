@@ -18,7 +18,7 @@ function setLi(li, element) {
           <a href="#">${element.strDrink}</a>
         </h4>
         <span class="steps">
-          Five stars
+          ${Math.ceil(Math.random() * 3 + 2)} stars
         </span>
         <p>
           A classic <br>
@@ -29,6 +29,7 @@ function setLi(li, element) {
 }
 
 function createMenu(list) {
+  list.sort((a, b) => 0.5 - Math.random());
   const half = Math.ceil(list.length / 2);
   let div = document.createElement("div");
   div.setAttribute("class", "col-md-12");
@@ -56,7 +57,6 @@ function createUl(list) {
   ul.setAttribute("id", "categories");
 
   //Comment this line if you want to get the elements in the original order
-  list.sort((a, b) => 0.5 - Math.random());
 
   list.forEach((element) => {
     let li = document.createElement("li");
@@ -88,10 +88,11 @@ async function getMenusByTag(tag) {
   toggleActive(tag);
 }
 
-
 async function getListFromApi(tag) {
-  const URL = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=";
-  const response = await fetch(`${URL}${tag}`);
+  const URL = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?";
+  const response = await fetch(
+    `${URL}${tag == "Non_Alcoholic" ? "a=" : "c="}${tag}`
+  );
   const jsonResponse = await response.json();
   return await jsonResponse.drinks;
 }
