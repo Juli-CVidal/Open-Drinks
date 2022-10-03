@@ -495,9 +495,14 @@ img {
 }
 
 #menuSection .media-left a {
+  cursor: pointer;
   text-decoration: none;
   color: #333;
   background-color: transparent;
+}
+
+#menuSection .media-body a {
+  cursor: pointer;
 }
 
 #menuSection.media img {
@@ -737,7 +742,11 @@ img {
 /*==================
  BLOG PAGE
 ====================*/
-#mu-blog-banner {
+#recipe img {
+  position: relative;
+  width: 100%;
+}
+#recipe-banner {
   background-attachment: fixed;
   background-image: url("assets/img/blog-banner.jpg");
   background-position: center center;
@@ -747,7 +756,7 @@ img {
   width: 100%;
   position: relative;
 }
-#mu-blog-banner:before {
+#recipe-banner:before {
   background-color: rgba(0, 0, 0, 0.6);
   content: "";
   position: absolute;
@@ -757,7 +766,7 @@ img {
   right: 0;
   z-index: 10;
 }
-#mu-blog-banner .mu-blog-banner-area {
+#recipe-banner .recipe-banner-area {
   display: inline;
   float: left;
   min-height: 350px;
@@ -767,95 +776,130 @@ img {
   width: 100%;
   z-index: 99;
 }
-#mu-blog-banner .mu-blog-banner-area h2 {
+
+#recipe-banner .recipe-banner-area img {
+  width: 100%;
+  position: absolute;
+}
+#recipe-banner .recipe-banner-area h2 a{
   color: #fff;
 }
-#mu-blog-banner .mu-blog-banner-area .breadcrumb {
+
+#recipe-banner .recipe-banner-area h3 a {
+  color: #c1a35f;
+}
+#recipe-banner .recipe-banner-area .breadcrumb {
   background-color: transparent;
   border-radius: 0;
   margin-bottom: 0px;
 }
-#mu-blog-banner .mu-blog-banner-area .breadcrumb li a {
-  color: #fff;
+#recipe-banner .recipe-banner-area .breadcrumb li a {
+  color: #c1a35f;
 }
 
-#mu-blog {
+#recipe {
   background-color: #f8f8f8;
   display: inline;
   float: left;
   padding: 50px 0;
   width: 100%;
 }
-#mu-blog .mu-blog-area {
+#recipe .recipe-area {
   display: inline;
   float: left;
   width: 100%;
 }
-#mu-blog .mu-blog-area .mu-blog-content {
+#recipe .recipe-area .recipe-content {
   display: inline;
   float: left;
   width: 100%;
 }
-#mu-blog .mu-blog-area .mu-blog-content .mu-news-single {
+#recipe .recipe-details-single {
+  background-color: #fff;
+  display: inline;
+  float: left;
+  width: 100%;
   margin-bottom: 30px;
 }
-#mu-blog .mu-blog-area .mu-blog-pagination-area {
+
+#recipe .recipe-details-single h2 {
+  transition: all 0.5s;
+}
+
+#recipe .recipe-details-single h2:hover {
+  color: #c1a35f;
+  transition: all 0.5s;
+}
+
+#recipe .recipe-details-img {
   display: inline;
   float: left;
   width: 100%;
 }
-#mu-blog .mu-blog-area .mu-blog-pagination-area .mu-blog-pagination {
+
+#recipe .recipe-details-single-content {
+  display: inline;
+  float: left;
+  width: 100%;
+  padding: 25px 20px;
+}
+#recipe .recipe-area .recipe-pagination-area {
+  display: inline;
+  float: left;
+  width: 100%;
+}
+#recipe .recipe-area .recipe-pagination-area .recipe-pagination {
   display: inline-block;
   text-align: left;
 }
-#mu-blog .mu-blog-area .mu-blog-pagination-area .mu-blog-pagination li {
+#recipe .recipe-area .recipe-pagination-area .recipe-pagination li {
   display: inline-block;
 }
-#mu-blog
-  .mu-blog-area
-  .mu-blog-pagination-area
-  .mu-blog-pagination
+#recipe
+  .recipe-area
+  .recipe-pagination-area
+  .recipe-pagination
   li:first-child
   a {
   border: 1px solid #ccc;
 }
-#mu-blog
-  .mu-blog-area
-  .mu-blog-pagination-area
-  .mu-blog-pagination
+#recipe
+  .recipe-area
+  .recipe-pagination-area
+  .recipe-pagination
   li:first-child
   a:hover,
-#mu-blog
-  .mu-blog-area
-  .mu-blog-pagination-area
-  .mu-blog-pagination
+#recipe
+  .recipe-area
+  .recipe-pagination-area
+  .recipe-pagination
   li:first-child
   a:focus {
   background-color: #fff;
 }
-#mu-blog
-  .mu-blog-area
-  .mu-blog-pagination-area
-  .mu-blog-pagination
+#recipe
+  .recipe-area
+  .recipe-pagination-area
+  .recipe-pagination
   li:last-child
   a {
   border: 1px solid #ccc;
 }
-#mu-blog
-  .mu-blog-area
-  .mu-blog-pagination-area
-  .mu-blog-pagination
+#recipe
+  .recipe-area
+  .recipe-pagination-area
+  .recipe-pagination
   li:last-child
   a:hover,
-#mu-blog
-  .mu-blog-area
-  .mu-blog-pagination-area
-  .mu-blog-pagination
+#recipe
+  .recipe-area
+  .recipe-pagination-area
+  .recipe-pagination
   li:last-child
   a:focus {
   background-color: #fff;
 }
-#mu-blog .mu-blog-area .mu-blog-pagination-area .mu-blog-pagination li a {
+#recipe .recipe-area .recipe-pagination-area .recipe-pagination li a {
   display: inline-block;
   padding: 5px 10px;
   -webkit-transition: all 0.5s;
@@ -864,12 +908,12 @@ img {
   -o-transition: all 0.5s;
   transition: all 0.5s;
 }
-#mu-blog .mu-blog-area .mu-blog-sidebar {
+#recipe .recipe-area .recipe-sidebar {
   display: inline;
   float: left;
   width: 100%;
 }
-#mu-blog .mu-blog-area .mu-blog-sidebar .mu-blog-sidebar-single {
+#recipe .recipe-area .recipe-sidebar .recipe-sidebar-single {
   background-color: #fff;
   border: 1px solid #ccc;
   display: inline;
@@ -878,11 +922,11 @@ img {
   padding: 10px 20px 20px;
   width: 100%;
 }
-#mu-blog .mu-blog-area .mu-blog-sidebar .mu-blog-sidebar-single h3 {
+#recipe .recipe-area .recipe-sidebar .recipe-sidebar-single h3 {
   margin-bottom: 20px;
   position: relative;
 }
-#mu-blog .mu-blog-area .mu-blog-sidebar .mu-blog-sidebar-single h3:after {
+#recipe .recipe-area .recipe-sidebar .recipe-sidebar-single h3:after {
   bottom: -10px;
   content: "";
   height: 2px;
@@ -890,27 +934,22 @@ img {
   position: absolute;
   width: 100px;
 }
-#mu-blog
-  .mu-blog-area
-  .mu-blog-sidebar
-  .mu-blog-sidebar-single
-  .mu-catg-nav
-  > li {
+#recipe .recipe-area .recipe-sidebar .recipe-sidebar-single .mu-catg-nav > li {
   border-bottom: 1px dashed #ccc;
   color: #555;
 }
-#mu-blog
-  .mu-blog-area
-  .mu-blog-sidebar
-  .mu-blog-sidebar-single
+#recipe
+  .recipe-area
+  .recipe-sidebar
+  .recipe-sidebar-single
   .mu-catg-nav
   > li:last-child {
   border-bottom: none;
 }
-#mu-blog
-  .mu-blog-area
-  .mu-blog-sidebar
-  .mu-blog-sidebar-single
+#recipe
+  .recipe-area
+  .recipe-sidebar
+  .recipe-sidebar-single
   .mu-catg-nav
   > li
   a {
@@ -924,26 +963,26 @@ img {
   -o-transition: all 0.5s;
   transition: all 0.5s;
 }
-#mu-blog
-  .mu-blog-area
-  .mu-blog-sidebar
-  .mu-blog-sidebar-single
+#recipe
+  .recipe-area
+  .recipe-sidebar
+  .recipe-sidebar-single
   .mu-recent-news-nav
   li {
   border-bottom: 1px solid #ccc;
 }
-#mu-blog
-  .mu-blog-area
-  .mu-blog-sidebar
-  .mu-blog-sidebar-single
+#recipe
+  .recipe-area
+  .recipe-sidebar
+  .recipe-sidebar-single
   .mu-recent-news-nav
   li:last-child {
   border-bottom: none;
 }
-#mu-blog
-  .mu-blog-area
-  .mu-blog-sidebar
-  .mu-blog-sidebar-single
+#recipe
+  .recipe-area
+  .recipe-sidebar
+  .recipe-sidebar-single
   .mu-recent-news-nav
   li
   a {
@@ -953,13 +992,13 @@ img {
   line-height: 20px;
   padding: 10px 0;
 }
-#mu-blog .mu-blog-area .mu-blog-sidebar .mu-blog-sidebar-single .tag-cloud {
+#recipe .recipe-area .recipe-sidebar .recipe-sidebar-single .tag-cloud {
   display: inline;
   float: left;
   width: 100%;
   margin-top: 15px;
 }
-#mu-blog .mu-blog-area .mu-blog-sidebar .mu-blog-sidebar-single .tag-cloud a {
+#recipe .recipe-area .recipe-sidebar .recipe-sidebar-single .tag-cloud a {
   color: #000;
   display: inline-block;
   letter-spacing: 0.5px;
@@ -971,107 +1010,124 @@ img {
   -o-transition: all 0.5s;
   transition: all 0.5s;
 }
-#mu-blog
-  .mu-blog-area
-  .mu-blog-sidebar
-  .mu-blog-sidebar-single
-  .mu-sidebar-add {
+#recipe .recipe-area .recipe-sidebar .recipe-sidebar-single .mu-sidebar-add {
   display: block;
   margin-top: 10px;
 }
-#mu-blog
-  .mu-blog-area
-  .mu-blog-sidebar
-  .mu-blog-sidebar-single
+#recipe
+  .recipe-area
+  .recipe-sidebar
+  .recipe-sidebar-single
   .mu-sidebar-add
   img {
   max-width: 100%;
 }
 
-.mu-blog-details .mu-news-single > h2 {
+.recipe-details .recipe-details-single > h2 {
   font-size: 28px;
   padding: 15px 20px;
 }
-.mu-blog-details .mu-news-single > h2 a {
+.recipe-details .recipe-details-single > h2 a {
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
   -ms-transition: all 0.5s;
   -o-transition: all 0.5s;
   transition: all 0.5s;
 }
-.mu-blog-details .mu-news-single .mu-news-single-content .mu-meta-nav {
+.recipe-details
+  .recipe-details-single
+  .recipe-details-single-content
+  .mu-meta-nav {
   margin-left: 0;
 }
-.mu-blog-details .mu-news-single .mu-news-single-content .mu-meta-nav li {
+.recipe-details
+  .recipe-details-single
+  .recipe-details-single-content
+  .mu-meta-nav
+  li {
   margin-bottom: 0;
 }
-.mu-blog-details .mu-news-single .mu-news-single-content h3 {
+.recipe-details .recipe-details-single .recipe-details-single-content h3 {
   text-align: left;
   padding: 0;
 }
-.mu-blog-details .mu-news-single .mu-news-single-content p {
+.recipe-details .recipe-details-single .recipe-details-single-content p {
   text-align: left;
 }
-.mu-blog-details .mu-news-single .mu-news-single-content blockquote {
+.recipe-details
+  .recipe-details-single
+  .recipe-details-single-content
+  blockquote {
   background-color: #f8f8f8;
   margin-top: 20px;
   padding: 20px 25px;
 }
-.mu-blog-details .mu-news-single .mu-news-single-content blockquote p {
+.recipe-details
+  .recipe-details-single
+  .recipe-details-single-content
+  blockquote
+  p {
   letter-spacing: 0.5px;
 }
-.mu-blog-details .mu-news-single .mu-news-single-content blockquote cite {
+.recipe-details
+  .recipe-details-single
+  .recipe-details-single-content
+  blockquote
+  cite {
   font-style: normal;
   font-size: 14px;
 }
-.mu-blog-details .mu-news-single .mu-news-single-content ul {
+.recipe-details .recipe-details-single .recipe-details-single-content ul {
   margin-left: 25px;
 }
-.mu-blog-details .mu-news-single .mu-news-single-content ul li {
+.recipe-details .recipe-details-single .recipe-details-single-content ul li {
   letter-spacing: 0.5px;
   line-height: 24px;
   list-style: outside none disc;
   margin-bottom: 5px;
 }
-.mu-blog-details .mu-news-single .mu-news-single-bottom {
+.recipe-details .recipe-details-single .recipe-details-single-bottom {
   display: inline;
   float: left;
   padding: 0 0 25px;
   width: 100%;
 }
-.mu-blog-details .mu-news-single .mu-news-single-bottom .mu-news-single-tag {
+.recipe-details
+  .recipe-details-single
+  .recipe-details-single-bottom
+  .recipe-details-single-tag {
   display: inline;
   float: left;
   width: 100%;
 }
-.mu-blog-details
-  .mu-news-single
-  .mu-news-single-bottom
-  .mu-news-single-tag
-  .mu-news-single-tagnav {
+.recipe-details
+  .recipe-details-single
+  .recipe-details-single-bottom
+  .recipe-details-single-tag
+  .recipe-details-single-tagnav {
   display: inline-block;
 }
-.mu-blog-details
-  .mu-news-single
-  .mu-news-single-bottom
-  .mu-news-single-tag
-  .mu-news-single-tagnav
+.recipe-details
+  .recipe-details-single
+  .recipe-details-single-bottom
+  .recipe-details-single-tag
+  .recipe-details-single-tagnav
   li {
   display: inline-block;
 }
-.mu-blog-details
-  .mu-news-single
-  .mu-news-single-bottom
-  .mu-news-single-tag
-  .mu-news-single-tagnav
+.recipe-details
+  .recipe-details-single
+  .recipe-details-single-bottom
+  .recipe-details-single-tag
+  .recipe-details-single-tagnav
   li:first-child {
   font-size: 16px;
 }
-.mu-blog-details
-  .mu-news-single
-  .mu-news-single-bottom
-  .mu-news-single-tag
-  .mu-news-single-tagnav
+.recipe-details
+  .recipe-details-single
+  .recipe-details-single-bottom
+  .recipe-details-single-tag
+  .recipe-details-single-tagnav
   li
   a {
   display: inline-block;
@@ -1082,39 +1138,42 @@ img {
   -o-transition: all 0.5s;
   transition: all 0.5s;
 }
-.mu-blog-details .mu-news-single .mu-news-single-bottom .mu-news-single-social {
+.recipe-details
+  .recipe-details-single
+  .recipe-details-single-bottom
+  .recipe-details-single-social {
   display: inline;
   float: left;
   width: 100%;
 }
-.mu-blog-details
-  .mu-news-single
-  .mu-news-single-bottom
-  .mu-news-single-social
-  .mu-news-single-socialnav {
+.recipe-details
+  .recipe-details-single
+  .recipe-details-single-bottom
+  .recipe-details-single-social
+  .recipe-details-single-socialnav {
   display: inline-block;
 }
-.mu-blog-details
-  .mu-news-single
-  .mu-news-single-bottom
-  .mu-news-single-social
-  .mu-news-single-socialnav
+.recipe-details
+  .recipe-details-single
+  .recipe-details-single-bottom
+  .recipe-details-single-social
+  .recipe-details-single-socialnav
   li {
   display: inline-block;
 }
-.mu-blog-details
-  .mu-news-single
-  .mu-news-single-bottom
-  .mu-news-single-social
-  .mu-news-single-socialnav
+.recipe-details
+  .recipe-details-single
+  .recipe-details-single-bottom
+  .recipe-details-single-social
+  .recipe-details-single-socialnav
   li:first-child {
   font-size: 16px;
 }
-.mu-blog-details
-  .mu-news-single
-  .mu-news-single-bottom
-  .mu-news-single-social
-  .mu-news-single-socialnav
+.recipe-details
+  .recipe-details-single
+  .recipe-details-single-bottom
+  .recipe-details-single-social
+  .recipe-details-single-socialnav
   li
   a {
   color: #888;
@@ -1127,14 +1186,14 @@ img {
   transition: all 0.5s;
 }
 
-.mu-blog-single-navigation {
+.recipe-single-navigation {
   display: inline;
   float: left;
   margin-bottom: 30px;
   padding: 20px 0;
   width: 100%;
 }
-.mu-blog-single-navigation a {
+.recipe-single-navigation a {
   border: 1px solid #ccc;
   color: #ccc;
   display: inline-block;
@@ -1147,23 +1206,23 @@ img {
   -o-transition: all 0.5s;
   transition: all 0.5s;
 }
-.mu-blog-single-navigation a:hover,
-.mu-blog-single-navigation a:focus {
+.recipe-single-navigation a:hover,
+.recipe-single-navigation a:focus {
   background-color: #fff;
 }
-.mu-blog-single-navigation .mu-blog-prev {
+.recipe-single-navigation .recipe-prev {
   float: left;
 }
-.mu-blog-single-navigation .mu-blog-next {
+.recipe-single-navigation .recipe-next {
   float: right;
 }
 
-.mu-blog-related-post {
+.recipe-related-post {
   display: inline;
   float: left;
   width: 100%;
 }
-.mu-blog-related-post .mu-blog-related-post-area {
+.recipe-related-post .recipe-related-post-area {
   display: inline;
   float: left;
   width: 100%;
@@ -1466,7 +1525,7 @@ img {
     padding: 23px 10px;
   }
 
-  #mu-blog-banner .mu-blog-banner-area {
+  #recipe-banner .recipe-banner-area {
     min-height: 300px;
   }
 }
@@ -1549,7 +1608,10 @@ img {
     top: 40%;
   }
 
-  #mu-latest-news .mu-latest-news-area .mu-latest-news-content .mu-news-single {
+  #mu-latest-news
+    .mu-latest-news-area
+    .mu-latest-news-content
+    .recipe-details-single {
     margin-top: 25px;
   }
 
@@ -1563,7 +1625,7 @@ img {
     font-size: 15px;
   }
 
-  #mu-blog-banner .mu-blog-banner-area {
+  #recipe-banner .recipe-banner-area {
     min-height: 250px;
   }
 
@@ -1603,18 +1665,18 @@ img {
     border-right: none;
   }
 
-  #mu-blog-banner .mu-blog-banner-area {
+  #recipe-banner .recipe-banner-area {
     min-height: 275px;
   }
 
-  #mu-blog .mu-blog-area .mu-blog-sidebar {
+  #recipe .recipe-area .recipe-sidebar {
     margin-top: 50px;
   }
 
-  #mu-blog
-    .mu-blog-area
-    .mu-blog-sidebar
-    .mu-blog-sidebar-single
+  #recipe
+    .recipe-area
+    .recipe-sidebar
+    .recipe-sidebar-single
     .mu-sidebar-add
     img {
     width: 100%;
@@ -1700,7 +1762,7 @@ img {
     width: 30px;
   }
 
-  #mu-blog-banner .mu-blog-banner-area {
+  #recipe-banner .recipe-banner-area {
     min-height: 220px;
   }
 }
@@ -1764,7 +1826,7 @@ img {
     margin: 0 2px;
   }
 
-  .mu-title {
+  .title {
     margin-bottom: 0;
   }
 
@@ -1815,21 +1877,21 @@ img {
     padding-top: 15.5%;
   }
 
-  #mu-blog-banner .mu-blog-banner-area {
+  #recipe-banner .recipe-banner-area {
     min-height: 150px;
   }
 
-  .mu-news-single h3 {
+  .recipe-details-single h3 {
     font-size: 20px;
     line-height: 25px;
     margin-bottom: 20px;
   }
 
-  #mu-blog .mu-blog-area .mu-blog-pagination-area {
+  #recipe .recipe-area .recipe-pagination-area {
     text-align: center;
   }
 
-  .mu-blog-details .mu-news-single > h2 {
+  .recipe-details .recipe-details-single > h2 {
     font-size: 20px;
     padding: 15px 15px;
     line-height: 30px;
@@ -1866,7 +1928,7 @@ img {
     li {
     margin-bottom: 10px;
   }
-  .mu-blog-related-post .mu-blog-related-post-area {
+  .recipe-related-post .recipe-related-post-area {
     margin-top: 30px;
   }
 }
@@ -1891,7 +1953,7 @@ img {
     padding: 0;
   }
 
-  .mu-title h2 {
+  .title h2 {
     font-size: 28px;
   }
 
@@ -1910,7 +1972,7 @@ img {
   #mu-latest-news
     .mu-latest-news-area
     .mu-latest-news-content
-    .mu-news-single
+    .recipe-details-single
     h3 {
     line-height: 24px;
     margin-bottom: 20px;
@@ -1921,8 +1983,8 @@ img {
   #mu-latest-news
     .mu-latest-news-area
     .mu-latest-news-content
-    .mu-news-single
-    .mu-news-single-content
+    .recipe-details-single
+    .recipe-details-single-content
     .mu-meta-nav
     li {
     padding: 0 5px;
@@ -1962,7 +2024,7 @@ img {
     width: 40px;
   }
 
-  .mu-news-single h3 {
+  .recipe-details-single h3 {
     font-size: 18px;
     line-height: 22px;
     padding: 0 10px;
@@ -1993,7 +2055,7 @@ img {
     font-size: 14px;
   }
 
-  #mu-blog-banner .mu-blog-banner-area {
+  #recipe-banner .recipe-banner-area {
     padding: 20% 0;
   }
 
@@ -2053,10 +2115,10 @@ img {
     padding-top: 25.5%;
   }
 
-  #mu-blog-banner .mu-blog-banner-area {
+  #recipe-banner .recipe-banner-area {
     padding: 25% 0;
   }
-  .mu-news-single .mu-news-single-content .mu-meta-nav li {
+  .recipe-details-single .recipe-details-single-content .mu-meta-nav li {
     border-right: none;
   }
 }

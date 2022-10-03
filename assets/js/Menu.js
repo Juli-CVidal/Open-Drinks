@@ -2,10 +2,15 @@ const menuContent = document.getElementById("catalogue");
 let lastSelected;
 let catalogue = {};
 
+function goToDetails(id) {
+  localStorage.setItem("idDrink", id);
+  window.location.href = "/blog-single.html";
+}
+
 function setLi(li, element) {
   li.innerHTML = ` <div class="media">
       <div class="media-left">
-      <a href="#">
+      <a onclick="goToDetails(${element.idDrink})">
       <img
           style="width:100px; height:100px;"
          src="${element.strDrinkThumb}"
@@ -15,15 +20,11 @@ function setLi(li, element) {
       </div>
       <div class="media-body">
         <h4 class="media-heading">
-          <a href="#">${element.strDrink}</a>
+        <a onclick="goToDetails(${element.idDrink})">${element.strDrink}</a>
         </h4>
         <span class="steps">
           ${Math.ceil(Math.random() * 3 + 2)} stars
         </span>
-        <p>
-          A classic <br>
-          Click For More info
-        </p>
       </div>
     </div>`;
 }
