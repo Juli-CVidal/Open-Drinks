@@ -85,7 +85,6 @@ async function startPage() {
   banner = document.getElementById("recipe-banner");
   drinkDetails = document.getElementById("drink-details");
   id = localStorage.getItem("idDrink");
-  console.log(id);
 
   drink = await fetchDrink();
   banner.innerHTML = createBanner();
