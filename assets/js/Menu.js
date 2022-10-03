@@ -9,7 +9,7 @@ function goToDetails(id) {
 function setLi(li, element) {
   li.innerHTML = ` <div class="media">
       <div class="media-left">
-      <a onclick="goToDetails(${element.idDrink})">
+      <a onclick="goToDetails(${element.idDrink})" href="/blog-single.html">
       <img
           style="width:100px; height:100px;"
          src="${element.strDrinkThumb}"
