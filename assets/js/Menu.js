@@ -9,7 +9,9 @@ function goToDetails(id) {
 function setLi(li, element) {
   li.innerHTML = ` <div class="media">
       <div class="media-left">
-      <a onclick="goToDetails(${element.idDrink})" href="/blog-single.html">
+      <a onclick="goToDetails(${
+        element.idDrink
+      })" href="/Simplifying-Menu-Template/blog-single.html">
       <img
           style="width:100px; height:100px;"
          src="${element.strDrinkThumb}"
@@ -19,7 +21,9 @@ function setLi(li, element) {
       </div>
       <div class="media-body">
         <h4 class="media-heading">
-        <a onclick="goToDetails(${element.idDrink})" href="/blog-single.html">${
+        <a onclick="goToDetails(${
+          element.idDrink
+        })" href="/Simplifying-Menu-Template/blog-single.html">${
     element.strDrink
   }</a>
         </h4>
