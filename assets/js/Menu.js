@@ -23,7 +23,7 @@ function setLi(li, element) {
         <h4 class="media-heading">
         <a onclick="goToDetails(${
           element.idDrink
-        })" href="/Simplifying-Menu-Template/blog-single.html">${
+        })" href="/blog-single.html">${
     element.strDrink
   }</a>
         </h4>
